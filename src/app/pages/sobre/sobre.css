@@ -104,7 +104,7 @@
 /* Monitores Ultrawide e Grandes Telas: Mantém a flor ancorada na foto mesmo com o container centralizado */
 @media (min-width: 1400px) {
   .flor1 {
-    left: calc((100vw - 1400px) / 2);
+    left: 0;
     width: 520px;
   }
 }
