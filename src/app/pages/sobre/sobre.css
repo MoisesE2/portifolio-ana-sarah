@@ -32,7 +32,7 @@
 }
 
 /* ─── Flor posicionada relativa à section ─── */
-/* left: 0 = borda esquerda do site */
+/* left: 0 = borda esquerda do site, z-index: 2 deixa na frente da imagem */
 .flor1 {
   position: absolute;
   left: 0;
@@ -43,7 +43,7 @@
   transform-origin: bottom left;
   pointer-events: none;
   filter: brightness(0.85);
-  z-index: 0;
+  z-index: 2;
 }
 
 /* ─── Coluna do texto ─── */

@@ -6,24 +6,19 @@
 
 /* ─── Header ─── */
 .portfolio-header {
-  position: relative;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 0 0 5%;
-  min-height: 120px;
+  align-items: flex-start;
+  gap: 28px;
+  padding: 0 5% 0 0; /* zero à esquerda — flor encosta na borda */
+  min-height: 0;
 }
 
 .flor2 {
-  /* canto superior direito, encostado na borda do site */
-  width: 160px;
+  width: 200px;
   flex-shrink: 0;
-  align-self: flex-start;
-  margin-top: 0;
-  margin-right: 0;
+  margin: 0; /* zero em todos os lados — cola na borda esquerda */
   opacity: 0.9;
-  transform: rotate(5deg);
-  transform-origin: top right;
+  display: block;
 }
 
 .portfolio-intro {
@@ -32,6 +27,7 @@
   color: #332202;
   max-width: 480px;
   line-height: 1.6;
+  padding-top: 24px; /* alinha verticalmente com o miolo da flor */
 }
 
 /* ─── Lista de projetos ─── */
