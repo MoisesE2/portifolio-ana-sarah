@@ -294,33 +294,87 @@
 }
 
 /* ─── Responsivo ─── */
+
+/* Notebooks Médios e Telas Pequenas */
+@media (max-width: 1200px) {
+  .contato-container {
+    gap: 50px;
+  }
+}
+
+/* Notebooks Pequenos e Tablets em Paisagem */
 @media (max-width: 1024px) {
   .contato-container {
     grid-template-columns: 1fr;
     gap: 60px;
   }
-  
   .contato-form-col {
     padding: 36px;
   }
 }
 
-@media (max-width: 640px) {
+/* Celulares Grandes e Tablets em Retrato */
+@media (max-width: 768px) {
   .contato-section {
-    padding: 40px 0 80px;
+    padding: 60px 0 80px;
   }
-  
-  .contato-form-col {
-    padding: 24px;
+  .contato-container {
+    gap: 40px;
   }
-  
-  .redes-links {
-    flex-direction: column;
-    gap: 10px;
+  .contato-titulo {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
   }
-  
+  .contato-detalhes {
+    margin-bottom: 32px;
+    padding-top: 24px;
+  }
   .rede-btn {
-    width: 100%;
-    justify-content: center;
+    padding: 10px 18px;
+    font-size: 0.82rem;
+  }
+}
+
+/* Celulares Médios e Pequenos */
+@media (max-width: 480px) {
+  .contato-section {
+    padding: 40px 0 60px;
+  }
+  .contato-form-col {
+    padding: 24px 20px;
+  }
+  .form-grid {
+    gap: 20px;
+  }
+  .form-input, .form-textarea {
+    padding: 12px 14px;
+    font-size: 0.9rem;
+  }
+  .submit-btn {
+    padding: 14px 28px;
+    font-size: 0.9rem;
+    width: 100%; /* botão largo em mobile é muito profissional */
+  }
+  .contato-titulo {
+    font-size: 2.4rem;
+  }
+  .detalhe-valor, .detalhe-link {
+    font-size: 1.05rem;
+  }
+  .sucesso-titulo {
+    font-size: 1.5rem;
+  }
+  .sucesso-texto {
+    font-size: 0.95rem;
+  }
+}
+
+/* Celulares Extremamente Pequenos (e.g. iPhone SE) */
+@media (max-width: 340px) {
+  .contato-titulo {
+    font-size: 2rem;
+  }
+  .contato-form-col {
+    padding: 20px 16px;
   }
 }

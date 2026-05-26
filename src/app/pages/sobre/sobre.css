@@ -100,15 +100,106 @@
 }
 
 /* ─── Responsivo ─── */
-@media (max-width: 960px) {
-  .sobre-container {
-    grid-template-columns: 1fr;
-    gap: 60px;
+
+/* Monitores Ultrawide e Grandes Telas: Mantém a flor ancorada na foto mesmo com o container centralizado */
+@media (min-width: 1400px) {
+  .flor1 {
+    left: calc((100vw - 1400px) / 2);
+    width: 520px;
   }
-  .image-col {
-    max-width: 400px;
+}
+
+/* Notebooks e Monitores Médios */
+@media (max-width: 1280px) {
+  .sobre-container {
+    grid-template-columns: 400px 1fr;
+    gap: 48px;
   }
   .flor1 {
-    width: 300px;
+    width: calc(6% + 400px + 20px);
+  }
+}
+
+/* Notebooks Pequenos e Tablets em Paisagem */
+@media (max-width: 1024px) {
+  .sobre-container {
+    grid-template-columns: 340px 1fr;
+    gap: 40px;
+  }
+  .flor1 {
+    width: calc(6% + 340px + 15px);
+    transform: rotate(-10deg);
+  }
+  .greeting {
+    font-size: clamp(2.4rem, 4.5vw, 3.5rem);
+    margin-bottom: 24px;
+  }
+}
+
+/* Tablets (Retrato) e Celulares Grandes */
+@media (max-width: 900px) {
+  .sobre-section {
+    padding: 60px 6% 120px;
+  }
+  .sobre-container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .image-col {
+    max-width: 450px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .flor1 {
+    width: 320px;
+    left: 0;
+    bottom: auto;
+    top: 180px; /* posiciona perto da foto empilhada */
+    transform: rotate(-8deg);
+  }
+  .info-grid {
+    margin-top: 48px;
+    gap: 32px;
+  }
+}
+
+/* Celulares Médios e Pequenos */
+@media (max-width: 480px) {
+  .sobre-section {
+    padding: 48px 5% 80px;
+  }
+  .sobre-container {
+    gap: 36px;
+  }
+  .image-placeholder {
+    max-height: 480px;
+  }
+  .flor1 {
+    width: 240px;
+    top: 140px;
+  }
+  .greeting {
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+  }
+  .bio {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 36px;
+  }
+}
+
+/* Celulares Extremamente Pequenos (e.g. iPhone SE antigo) */
+@media (max-width: 340px) {
+  .flor1 {
+    width: 190px;
+    top: 120px;
+  }
+  .greeting {
+    font-size: 1.8rem;
   }
 }

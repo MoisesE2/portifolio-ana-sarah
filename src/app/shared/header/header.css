@@ -43,3 +43,33 @@
 .nav a:hover {
   opacity: 0.75;
 }
+
+/* ─── Responsivo ─── */
+@media (max-width: 768px) {
+  .nav {
+    gap: 40px;
+    padding: 20px 32px;
+  }
+  .nav a {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    gap: 24px;
+    padding: 16px 16px;
+  }
+  .nav a {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .nav {
+    gap: 16px;
+  }
+  .nav a {
+    font-size: 0.85rem;
+  }
+}
