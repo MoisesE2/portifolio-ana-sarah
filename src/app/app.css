@@ -1,0 +1,26 @@
+.floating-email {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 52px;
+  height: 52px;
+  background-color: #332202;
+  color: #DCC2C4;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 16px rgba(51, 34, 2, 0.25);
+}
+
+.floating-email:hover {
+  transform: scale(1.12);
+  box-shadow: 0 6px 24px rgba(51, 34, 2, 0.4);
+}
+
+.floating-email svg {
+  width: 24px;
+  height: 24px;
+}

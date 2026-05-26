@@ -1,0 +1,58 @@
+<section class="portfolio-section">
+
+  <!-- Cabeçalho: texto à esquerda, flor no canto superior direito -->
+  <div class="portfolio-header">
+    <p class="portfolio-intro">Confira os designs autorais e comerciais desenvolvidos por mim.</p>
+    <img src="flor2.png" alt="Flor decorativa" class="flor2" />
+  </div>
+
+  <!-- Lista de projetos -->
+  <div class="projetos-list">
+    @for (projeto of projetos; track projeto.id) {
+      <div class="projeto-item" [class.aberto]="projeto.aberto">
+
+        <!-- Linha clicável -->
+        <button class="projeto-row" (click)="toggle(projeto)" [attr.aria-expanded]="projeto.aberto">
+          <div class="projeto-esquerda">
+            <span class="projeto-nome">{{ projeto.nome }}</span>
+            @if (projeto.ano) {
+              <span class="projeto-ano">{{ projeto.ano }}</span>
+            }
+          </div>
+          <div class="projeto-direita">
+            <span class="projeto-categorias">
+              @for (cat of projeto.categorias; track cat; let last = $last) {
+                {{ cat | uppercase }}@if (!last) { + }
+              }
+            </span>
+            <span class="projeto-chevron" [class.rotated]="projeto.aberto">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 9l6 6 6-6"/>
+              </svg>
+            </span>
+          </div>
+        </button>
+
+        <!-- Painel expandido -->
+        <div class="projeto-panel" [class.visible]="projeto.aberto">
+          <div class="projeto-content">
+            <p class="projeto-descricao">{{ projeto.descricao }}</p>
+            @if (projeto.ficticio) {
+              <span class="tag-ficticio">★ Projeto fictício desenvolvido por mim</span>
+            }
+            <div class="ferramentas">
+              <span class="ferramentas-label">Ferramentas</span>
+              <div class="ferramentas-icons">
+                @for (tool of projeto.ferramentas; track tool) {
+                  <span class="tool-badge" [title]="tool">{{ getToolIcon(tool) }}</span>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    }
+  </div>
+
+</section>

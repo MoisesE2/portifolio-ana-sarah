@@ -1,0 +1,45 @@
+.site-header {
+  background-color: #DCC2C4;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(51, 34, 2, 0.12);
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 90px;
+  padding: 26px 48px;
+}
+
+.nav a {
+  font-size: 1.1rem;
+  font-weight: 700; /* Lato Bold */
+  color: #332202;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  position: relative;
+  transition: opacity 0.2s ease;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #332202;
+  transition: width 0.25s ease;
+}
+
+.nav a:hover::after,
+.nav a.active::after {
+  width: 100%;
+}
+
+.nav a:hover {
+  opacity: 0.75;
+}

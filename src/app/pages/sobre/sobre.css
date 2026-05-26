@@ -1,0 +1,114 @@
+.sobre-section {
+  position: relative;
+  background-color: #332202;
+  min-height: calc(100vh - 70px);
+  padding: 72px 6% 160px;
+  overflow: hidden; /* evita scroll horizontal pela flor */
+}
+
+.sobre-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 480px 1fr;
+  gap: 80px;
+  align-items: start;
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Coluna da imagem ─── */
+.image-col {
+  position: relative;
+}
+
+.image-placeholder {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  max-height: 640px;
+  background-color: #ffffff;
+  opacity: 1;
+  border-radius: 2px;
+}
+
+/* ─── Flor posicionada relativa à section ─── */
+/* left: 0 = borda esquerda do site */
+.flor1 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: calc(6% + 480px + 20px); /* padding-left + largura da coluna + sobra */
+  max-width: 580px;
+  transform: rotate(-12deg);
+  transform-origin: bottom left;
+  pointer-events: none;
+  filter: brightness(0.85);
+  z-index: 0;
+}
+
+/* ─── Coluna do texto ─── */
+.text-col {
+  color: #ffffff;
+  padding-top: 16px;
+}
+
+.greeting {
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 900; /* Lato ExtraBold */
+  margin-bottom: 36px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.bio {
+  font-size: 1.15rem;
+  font-weight: 400; /* Lato Regular */
+  line-height: 1.85;
+  margin-bottom: 16px;
+  opacity: 0.95;
+}
+
+/* ─── Grid de informações ─── */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 64px;
+}
+
+.info-title {
+  font-size: 1.05rem;
+  font-weight: 700; /* Lato Bold */
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 14px;
+  color: #ffffff;
+}
+
+.info-role {
+  font-size: 1.05rem;
+  font-weight: 400; /* Lato Regular */
+  color: rgba(255,255,255,0.9);
+  line-height: 1.7;
+}
+
+.info-period {
+  font-size: 0.95rem;
+  font-weight: 400; /* Lato Regular */
+  color: rgba(255,255,255,0.55);
+  margin-top: 4px;
+}
+
+/* ─── Responsivo ─── */
+@media (max-width: 960px) {
+  .sobre-container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .image-col {
+    max-width: 400px;
+  }
+  .flor1 {
+    width: 300px;
+  }
+}

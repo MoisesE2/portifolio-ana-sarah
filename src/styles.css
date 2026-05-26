@@ -1,0 +1,29 @@
+:root {
+  --rosa: #DCC2C4;
+  --marrom: #332202;
+  --branco: #ffffff;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 20px; /* ~125% zoom — escala todos os valores rem automaticamente */
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: var(--rosa);
+  color: var(--marrom);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

@@ -1,0 +1,62 @@
+.contato-section {
+  background-color: #DCC2C4;
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+}
+
+.contato-container {
+  padding: 100px 8%;
+  max-width: 900px;
+}
+
+.contato-titulo {
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 900; /* Lato ExtraBold */
+  color: #332202;
+  line-height: 1;
+  margin-bottom: 32px;
+  letter-spacing: -0.02em;
+}
+
+.contato-subtitulo {
+  font-size: 1.05rem;
+  font-weight: 400; /* Lato Regular */
+  color: #332202;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.contato-mensagem {
+  font-size: 1.05rem;
+  font-weight: 700; /* Lato Bold */
+  color: #332202;
+  margin-bottom: 32px;
+}
+
+/* ─── Botão de email ─── */
+.email-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #332202;
+  color: #DCC2C4;
+  font-size: 1rem;
+  font-weight: 700; /* Lato Bold */
+  padding: 14px 28px;
+  border-radius: 4px;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.email-btn svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.email-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}

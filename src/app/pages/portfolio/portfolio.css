@@ -1,0 +1,203 @@
+.portfolio-section {
+  background-color: #DCC2C4;
+  min-height: calc(100vh - 70px);
+  padding-bottom: 100px;
+}
+
+/* ─── Header ─── */
+.portfolio-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 0 5%;
+  min-height: 120px;
+}
+
+.flor2 {
+  /* canto superior direito, encostado na borda do site */
+  width: 160px;
+  flex-shrink: 0;
+  align-self: flex-start;
+  margin-top: 0;
+  margin-right: 0;
+  opacity: 0.9;
+  transform: rotate(5deg);
+  transform-origin: top right;
+}
+
+.portfolio-intro {
+  font-size: 1.05rem;
+  font-weight: 400; /* Lato Regular */
+  color: #332202;
+  max-width: 480px;
+  line-height: 1.6;
+}
+
+/* ─── Lista de projetos ─── */
+.projetos-list {
+  border-top: 1.5px solid rgba(51, 34, 2, 0.2);
+}
+
+.projeto-item {
+  border-bottom: 1.5px solid rgba(51, 34, 2, 0.2);
+}
+
+/* ─── Linha clicável ─── */
+.projeto-row {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 5%;
+  text-align: left;
+  gap: 24px;
+  transition: background-color 0.2s ease;
+}
+
+.projeto-row:hover {
+  background-color: rgba(51, 34, 2, 0.04);
+}
+
+.projeto-esquerda {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.projeto-nome {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 900; /* Lato ExtraBold */
+  color: #332202;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+.projeto-ano {
+  font-size: 0.8rem;
+  font-weight: 400; /* Lato Regular */
+  color: rgba(51, 34, 2, 0.55);
+  letter-spacing: 0.04em;
+}
+
+.projeto-direita {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.projeto-categorias {
+  font-size: 0.72rem;
+  font-weight: 700; /* Lato Bold */
+  letter-spacing: 0.1em;
+  color: rgba(51, 34, 2, 0.7);
+  text-align: right;
+  max-width: 320px;
+}
+
+.projeto-chevron {
+  color: #332202;
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+.projeto-chevron.rotated {
+  transform: rotate(180deg);
+}
+
+/* ─── Painel expansível ─── */
+.projeto-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.projeto-panel.visible {
+  max-height: 800px;
+}
+
+.projeto-content {
+  padding: 0 5% 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.projeto-descricao {
+  font-size: 0.95rem;
+  font-weight: 400; /* Lato Regular */
+  color: #332202;
+  line-height: 1.8;
+  max-width: 720px;
+}
+
+.tag-ficticio {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700; /* Lato Bold */
+  color: rgba(51, 34, 2, 0.6);
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(51, 34, 2, 0.25);
+  padding: 4px 12px;
+  border-radius: 20px;
+  width: fit-content;
+}
+
+/* ─── Ferramentas ─── */
+.ferramentas {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.ferramentas-label {
+  font-size: 0.75rem;
+  font-weight: 700; /* Lato Bold */
+  letter-spacing: 0.08em;
+  color: rgba(51, 34, 2, 0.55);
+  text-transform: uppercase;
+}
+
+.ferramentas-icons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tool-badge {
+  width: 36px;
+  height: 36px;
+  background-color: #332202;
+  color: #DCC2C4;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700; /* Lato Bold */
+  letter-spacing: 0.02em;
+}
+
+/* ─── Responsivo ─── */
+@media (max-width: 640px) {
+  .projeto-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 20px 5%;
+  }
+  .projeto-direita {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .projeto-categorias {
+    max-width: 220px;
+    text-align: left;
+  }
+}
