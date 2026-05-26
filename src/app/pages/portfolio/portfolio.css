@@ -221,6 +221,12 @@
 
 .projeto-img-wrapper.grid-half {
   grid-column: span 1;
+  display: flex;
+}
+
+.projeto-img-wrapper.grid-half .projeto-img {
+  height: 100%;
+  object-fit: cover;
 }
 
 .projeto-img {
@@ -343,6 +349,10 @@
   .projeto-img-wrapper,
   .projeto-img-wrapper.grid-half {
     grid-column: span 1;
+  }
+  .projeto-img-wrapper.grid-half .projeto-img {
+    height: auto;
+    object-fit: contain;
   }
 }
 
