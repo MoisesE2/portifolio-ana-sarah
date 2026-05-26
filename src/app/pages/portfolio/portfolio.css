@@ -6,33 +6,39 @@
 
 /* ─── Header ─── */
 .portfolio-header {
+  position: relative;
   display: flex;
-  align-items: flex-start;
-  gap: 28px;
-  padding: 0 5% 0 0; /* zero à esquerda — flor encosta na borda */
-  min-height: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 10%;
+  min-height: 130px;
+  border-top: 1.5px solid rgba(51, 34, 2, 0.2);
+  border-bottom: 1.5px solid rgba(51, 34, 2, 0.2);
+  background-color: #DCC2C4;
 }
 
 .flor2 {
-  width: 200px;
-  flex-shrink: 0;
-  margin: 0; /* zero em todos os lados — cola na borda esquerda */
-  opacity: 0.9;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 140px;
+  opacity: 0.95;
+  pointer-events: none;
   display: block;
 }
 
 .portfolio-intro {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   font-weight: 400; /* Lato Regular */
   color: #332202;
-  max-width: 480px;
+  max-width: 640px;
   line-height: 1.6;
-  padding-top: 24px; /* alinha verticalmente com o miolo da flor */
+  text-align: center;
 }
 
 /* ─── Lista de projetos ─── */
 .projetos-list {
-  border-top: 1.5px solid rgba(51, 34, 2, 0.2);
+  /* borda superior agora é provida pela borda inferior do header */
 }
 
 .projeto-item {
@@ -177,6 +183,20 @@
   font-size: 0.7rem;
   font-weight: 700; /* Lato Bold */
   letter-spacing: 0.02em;
+}
+
+.tool-icon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  opacity: 0.95;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.tool-icon:hover {
+  opacity: 1;
+  transform: translateY(-2px) scale(1.08);
 }
 
 /* ─── Responsivo ─── */

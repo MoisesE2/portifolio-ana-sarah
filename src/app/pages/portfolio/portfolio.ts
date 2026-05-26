@@ -54,7 +54,7 @@ export class Portfolio {
     {
       id: 4,
       nome: 'Arca Construções',
-      ano: '',
+      ano: '2026',
       categorias: ['user interface'],
       descricao: 'UI desenvolvida para uma construtora de alto padrão, com foco em clareza e estética contemporânea. A navegação foi pensada para oferecer uma experiência intuitiva, equilibrando conteúdo institucional e apelo visual de forma objetiva e refinada.',
       ferramentas: ['Illustrator', 'Figma'],
@@ -64,7 +64,7 @@ export class Portfolio {
     {
       id: 5,
       nome: 'Isla E-commerce',
-      ano: '',
+      ano: '2026',
       categorias: ['user interface'],
       descricao: 'UI desenvolvida para um e-commerce de moda feminina com foco em uma experiência de compra leve, intuitiva e visualmente sofisticada. O projeto apresenta uma composição limpa, paleta neutra, pensado para valorizar as coleções e facilitar a jornada do usuário.',
       ferramentas: ['Illustrator', 'Figma'],
@@ -75,6 +75,21 @@ export class Portfolio {
 
   toggle(projeto: Projeto): void {
     projeto.aberto = !projeto.aberto;
+  }
+
+  getToolIconPath(tool: string): string {
+    const paths: Record<string, string> = {
+      'Illustrator': 'icones/ilustrator.png',
+      'Photoshop': 'icones/photoshop.png',
+      'Figma': 'icones/figma.png',
+      'Canva': 'icones/canva.png',
+      'Lightroom': 'icones/lightroom.png'
+    };
+    return paths[tool] || '';
+  }
+
+  hasToolIcon(tool: string): boolean {
+    return !!this.getToolIconPath(tool);
   }
 
   getToolIcon(tool: string): string {

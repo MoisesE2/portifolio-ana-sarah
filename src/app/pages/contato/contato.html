@@ -1,19 +1,93 @@
 <section class="contato-section">
   <div class="contato-container">
-    <h1 class="contato-titulo">Contato</h1>
-    <p class="contato-subtitulo">
-      Estou disponível para novos trabalhos, colaborações e conversas.
-    </p>
-    <p class="contato-mensagem">
-      Me mande uma mensagem&nbsp;:)
-    </p>
-    <a href="mailto:anaposca@gmail.com" class="email-btn">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-        <path d="M2 7l10 7 10-7"></path>
-      </svg>
-      anaposca&#64;gmail.com
-    </a>
+    
+    <!-- Coluna Esquerda: Informações e Redes Sociais -->
+    <div class="contato-info-col">
+      <h1 class="contato-titulo">Contato</h1>
+      
+      <div class="contato-detalhes">
+        <div class="detalhe-item">
+          <span class="detalhe-label">Localização</span>
+          <span class="detalhe-valor">Maceió, AL — Brasil</span>
+        </div>
+        <div class="detalhe-item">
+          <span class="detalhe-label">Email Direto</span>
+          <a href="mailto:anaposca@gmail.com" class="detalhe-link">anaposca&#64;gmail.com</a>
+        </div>
+      </div>
+
+      <div class="contato-redes">
+        <span class="redes-label">Rede Social</span>
+        <div class="redes-links">
+          <a href="https://www.linkedin.com/in/ana-sarah-pontes/" target="_blank" class="rede-btn" title="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Coluna Direita: Formulário de Contato -->
+    <div class="contato-form-col">
+      @if (!enviado) {
+        <form #contatoForm="ngForm" (ngSubmit)="onSubmit(contatoForm)" class="form-grid" novalidate>
+          <div class="form-group">
+            <label for="nome" class="form-label">Seu Nome</label>
+            <input type="text" id="nome" name="nome" [(ngModel)]="nome" required #nameInput="ngModel"
+                   [class.invalid]="nameInput.touched && nameInput.invalid"
+                   placeholder="Como posso te chamar?" class="form-input" />
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">Seu Email</label>
+            <input type="email" id="email" name="email" [(ngModel)]="email" required email #emailInput="ngModel"
+                   [class.invalid]="emailInput.touched && emailInput.invalid"
+                   placeholder="exemplo@email.com" class="form-input" />
+          </div>
+
+          <div class="form-group">
+            <label for="assunto" class="form-label">Assunto</label>
+            <input type="text" id="assunto" name="assunto" [(ngModel)]="assunto" required #subjectInput="ngModel"
+                   [class.invalid]="subjectInput.touched && subjectInput.invalid"
+                   placeholder="Sobre o que vamos conversar?" class="form-input" />
+          </div>
+
+          <div class="form-group">
+            <label for="mensagem" class="form-label">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" [(ngModel)]="mensagem" required rows="4" #messageInput="ngModel"
+                      [class.invalid]="messageInput.touched && messageInput.invalid"
+                      placeholder="Fale um pouco sobre a sua ideia ou projeto..." class="form-textarea"></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn" [disabled]="contatoForm.invalid">
+            <span>Enviar Mensagem</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </form>
+      } @else {
+        <div class="sucesso-container">
+          <div class="sucesso-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <h2 class="sucesso-titulo">Mensagem Enviada!</h2>
+          <p class="sucesso-texto">
+            Obrigada pelo contato, <strong>{{ nome }}</strong>. Responderei em breve no email <strong>{{ email }}</strong>.
+          </p>
+          <button (click)="reset()" class="voltar-btn">
+            Enviar nova mensagem
+          </button>
+        </div>
+      }
+    </div>
+
   </div>
 </section>

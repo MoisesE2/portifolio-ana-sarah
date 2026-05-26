@@ -44,7 +44,11 @@
               <span class="ferramentas-label">Ferramentas</span>
               <div class="ferramentas-icons">
                 @for (tool of projeto.ferramentas; track tool) {
-                  <span class="tool-badge" [title]="tool">{{ getToolIcon(tool) }}</span>
+                  @if (hasToolIcon(tool)) {
+                    <img [src]="getToolIconPath(tool)" [alt]="tool" class="tool-icon" [title]="tool" />
+                  } @else {
+                    <span class="tool-badge" [title]="tool">{{ getToolIcon(tool) }}</span>
+                  }
                 }
               </div>
             </div>
