@@ -52,6 +52,15 @@
                 }
               </div>
             </div>
+
+            <!-- Imagens em alta fidelidade do projeto -->
+            <div class="projeto-imagens">
+              @for (img of projeto.imagens; track img; let i = $index) {
+                <div class="projeto-img-wrapper" [class.grid-half]="projeto.id === 1 && i >= 4">
+                  <img [src]="img" alt="Mockup do projeto" class="projeto-img" loading="lazy" />
+                </div>
+              }
+            </div>
           </div>
         </div>
 

@@ -115,11 +115,11 @@
 .projeto-panel {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: max-height 1.2s cubic-bezier(0, 1, 0, 1); /* Animação suave para grandes alturas */
 }
 
 .projeto-panel.visible {
-  max-height: 800px;
+  max-height: 20000px; /* Grande o suficiente para todos os mockups longos */
 }
 
 .projeto-content {
@@ -197,6 +197,37 @@
 .tool-icon:hover {
   opacity: 1;
   transform: translateY(-2px) scale(1.08);
+}
+
+/* ─── Imagens do Projeto ─── */
+.projeto-imagens {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+  width: 100%;
+}
+
+.projeto-img-wrapper {
+  grid-column: span 2;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 6px 20px rgba(51, 34, 2, 0.04);
+  background-color: rgba(255, 255, 255, 0.1);
+  display: block;
+}
+
+.projeto-img-wrapper.grid-half {
+  grid-column: span 1;
+}
+
+.projeto-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain; /* Mantém a proporção exata e altura máxima natural */
 }
 
 /* ─── Responsivo ─── */
@@ -303,6 +334,15 @@
   .tool-badge, .tool-icon {
     width: 32px;
     height: 32px;
+  }
+  .projeto-imagens {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 24px;
+  }
+  .projeto-img-wrapper,
+  .projeto-img-wrapper.grid-half {
+    grid-column: span 1;
   }
 }
 
