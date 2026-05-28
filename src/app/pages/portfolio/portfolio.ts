@@ -24,20 +24,18 @@ export class Portfolio {
   projetos: Projeto[] = [
     {
       id: 1,
-      nome: 'Ana Paula Pereira',
-      ano: '2026',
-      categorias: ['identidade visual', 'branding'],
-      descricao: 'A identidade visual desenvolvida para a psicóloga Ana Paula materializa os pilares de sua prática: feminilidade, proteção, experiência e humanização. A marca foi projetada para transmitir segurança e acolhimento, comunicando visualmente a essência do cuidado e do suporte terapêutico.',
-      ferramentas: ['Illustrator', 'Photoshop'],
+      nome: 'Villa Igará',
+      ano: '2025–2026',
+      categorias: ['identidade visual', 'direção de arte', 'branding', 'social media'],
+      descricao: 'A pousada Villa Igará fica localizada em São Miguel dos Milagres – AL, um dos cartões postais do nordeste. A marca tem como princípio a experiência de conexão com a natureza, aconchego e descanso. A proposta foi a criação de uma identidade visual que representa o conceito de refúgio intimista do espaço físico e o clima paradisíaco da cidade de Milagres. A canoa presente na identidade remete à igará, embarcação tradicional local que atravessa rios e o mar.',
+      ferramentas: ['Illustrator', 'Photoshop', 'Lightroom'],
       ficticio: false,
       aberto: false,
       imagens: [
-        'portifolio/anapaula/01.png',
-        'portifolio/anapaula/02.png',
-        'portifolio/anapaula/03.png',
-        'portifolio/anapaula/04.png',
-        'portifolio/anapaula/05.png',
-        'portifolio/anapaula/06.png'
+        'portifolio/villaigara/01.jpg',
+        'portifolio/villaigara/02.png',
+        'portifolio/villaigara/03.png',
+        'portifolio/villaigara/04.png'
       ]
     },
     {
@@ -58,18 +56,20 @@ export class Portfolio {
     },
     {
       id: 3,
-      nome: 'Villa Igará',
-      ano: '2025–2026',
-      categorias: ['identidade visual', 'direção de arte', 'branding', 'social media'],
-      descricao: 'A pousada Villa Igará fica localizada em São Miguel dos Milagres – AL, um dos cartões postais do nordeste. A marca tem como princípio a experiência de conexão com a natureza, aconchego e descanso. A proposta foi a criação de uma identidade visual que representa o conceito de refúgio intimista do espaço físico e o clima paradisíaco da cidade de Milagres. A canoa presente na identidade remete à igará, embarcação tradicional local que atravessa rios e o mar.',
-      ferramentas: ['Illustrator', 'Photoshop', 'Lightroom'],
+      nome: 'Ana Paula Pereira',
+      ano: '2026',
+      categorias: ['identidade visual', 'branding'],
+      descricao: 'A identidade visual desenvolvida para a psicóloga Ana Paula materializa os pilares de sua prática: feminilidade, proteção, experiência e humanização. A marca foi projetada para transmitir segurança e acolhimento, comunicando visualmente a essência do cuidado e do suporte terapêutico.',
+      ferramentas: ['Illustrator', 'Photoshop'],
       ficticio: false,
       aberto: false,
       imagens: [
-        'portifolio/villaigara/01.jpg',
-        'portifolio/villaigara/02.png',
-        'portifolio/villaigara/03.png',
-        'portifolio/villaigara/04.png'
+        'portifolio/anapaula/01.png',
+        'portifolio/anapaula/02.png',
+        'portifolio/anapaula/03.png',
+        'portifolio/anapaula/04.png',
+        'portifolio/anapaula/05.png',
+        'portifolio/anapaula/06.png'
       ]
     },
     {

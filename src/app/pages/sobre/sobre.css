@@ -1,71 +1,65 @@
 .sobre-section {
   position: relative;
-  background-color: #332202;
+  background-color: #DCC2C4;
   min-height: calc(100vh - 70px);
-  padding: 72px 6% 160px;
-  overflow: hidden; /* evita scroll horizontal pela flor */
+  padding: 56px 8% 120px;
+  overflow: hidden;
 }
 
 .sobre-container {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 480px 1fr;
-  gap: 80px;
-  align-items: start;
-  position: relative;
-  z-index: 1;
+  grid-template-columns: minmax(260px, 371px) 1fr;
+  gap: 64px 72px;
+  align-items: center;
 }
 
 /* ─── Coluna da imagem ─── */
 .image-col {
   position: relative;
+  justify-self: start;
 }
 
-.image-placeholder {
+.polaroid {
+  display: block;
   width: 100%;
-  aspect-ratio: 3 / 4;
-  max-height: 640px;
-  background-color: #ffffff;
-  opacity: 1;
-  border-radius: 2px;
+  max-width: 371px;
+  height: auto;
+  position: relative;
+  z-index: 1;
 }
 
-/* ─── Flor posicionada relativa à section ─── */
-/* left: 0 = borda esquerda do site, z-index: 2 deixa na frente da imagem */
 .flor1 {
   position: absolute;
+  top: 48px;
   left: 0;
-  bottom: 0;
-  width: calc(6% + 480px + 20px); /* padding-left + largura da coluna + sobra */
-  max-width: 580px;
-  transform: rotate(-12deg);
-  transform-origin: bottom left;
+  width: 280px;
   pointer-events: none;
-  filter: brightness(0.85);
   z-index: 2;
 }
 
 /* ─── Coluna do texto ─── */
 .text-col {
-  color: #ffffff;
-  padding-top: 16px;
+  color: #332202;
+  padding-top: 8px;
 }
 
 .greeting {
   font-size: clamp(2.8rem, 5vw, 4.5rem);
-  font-weight: 900; /* Lato ExtraBold */
+  font-weight: 900;
   margin-bottom: 36px;
   line-height: 1.05;
   letter-spacing: -0.02em;
+  color: #332202;
 }
 
 .bio {
   font-size: 1.15rem;
-  font-weight: 400; /* Lato Regular */
+  font-weight: 400;
   line-height: 1.85;
   margin-bottom: 16px;
-  opacity: 0.95;
+  color: #332202;
 }
 
 /* ─── Grid de informações ─── */
@@ -78,114 +72,107 @@
 
 .info-title {
   font-size: 1.05rem;
-  font-weight: 700; /* Lato Bold */
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 14px;
-  color: #ffffff;
+  color: #332202;
 }
 
 .info-role {
   font-size: 1.05rem;
-  font-weight: 400; /* Lato Regular */
-  color: rgba(255,255,255,0.9);
+  font-weight: 400;
+  color: #332202;
   line-height: 1.7;
 }
 
 .info-period {
   font-size: 0.95rem;
-  font-weight: 400; /* Lato Regular */
-  color: rgba(255,255,255,0.55);
+  font-weight: 400;
+  color: rgba(51, 34, 2, 0.65);
   margin-top: 4px;
 }
 
 /* ─── Responsivo ─── */
-
-/* Monitores Ultrawide e Grandes Telas: Mantém a flor ancorada na foto mesmo com o container centralizado */
-@media (min-width: 1400px) {
-  .flor1 {
-    left: 0;
-    width: 520px;
-  }
-}
-
-/* Notebooks e Monitores Médios */
 @media (max-width: 1280px) {
   .sobre-container {
-    grid-template-columns: 400px 1fr;
-    gap: 48px;
-  }
-  .flor1 {
-    width: calc(6% + 400px + 20px);
+    gap: 48px 56px;
   }
 }
 
-/* Notebooks Pequenos e Tablets em Paisagem */
 @media (max-width: 1024px) {
   .sobre-container {
-    grid-template-columns: 340px 1fr;
+    grid-template-columns: minmax(240px, 320px) 1fr;
     gap: 40px;
   }
+
   .flor1 {
-    width: calc(6% + 340px + 15px);
-    transform: rotate(-10deg);
+    width: 240px;
+    top: 40px;
   }
+
   .greeting {
     font-size: clamp(2.4rem, 4.5vw, 3.5rem);
     margin-bottom: 24px;
   }
 }
 
-/* Tablets (Retrato) e Celulares Grandes */
 @media (max-width: 900px) {
   .sobre-section {
-    padding: 60px 6% 120px;
+    padding: 48px 6% 100px;
   }
+
   .sobre-container {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 40px;
   }
+
   .image-col {
-    max-width: 450px;
+    max-width: 371px;
     margin: 0 auto;
     width: 100%;
   }
+
   .flor1 {
-    width: 320px;
-    left: 0;
-    bottom: auto;
-    top: 180px; /* posiciona perto da foto empilhada */
-    transform: rotate(-8deg);
+    width: 220px;
+    top: 36px;
   }
+
+  .text-col {
+    padding-top: 0;
+  }
+
   .info-grid {
     margin-top: 48px;
     gap: 32px;
   }
 }
 
-/* Celulares Médios e Pequenos */
 @media (max-width: 480px) {
   .sobre-section {
-    padding: 48px 5% 80px;
+    padding: 40px 5% 80px;
   }
+
   .sobre-container {
-    gap: 36px;
+    gap: 32px;
   }
-  .image-placeholder {
-    max-height: 480px;
-  }
+
   .flor1 {
-    width: 240px;
-    top: 140px;
+    width: 200px;
+    top: 32px;
+    left: 0;
   }
+
   .greeting {
     font-size: 2.2rem;
     margin-bottom: 16px;
   }
+
   .bio {
     font-size: 1rem;
     line-height: 1.7;
   }
+
   .info-grid {
     grid-template-columns: 1fr;
     gap: 28px;
@@ -193,12 +180,12 @@
   }
 }
 
-/* Celulares Extremamente Pequenos (e.g. iPhone SE antigo) */
 @media (max-width: 340px) {
   .flor1 {
-    width: 190px;
-    top: 120px;
+    width: 150px;
+    top: 28px;
   }
+
   .greeting {
     font-size: 1.8rem;
   }
