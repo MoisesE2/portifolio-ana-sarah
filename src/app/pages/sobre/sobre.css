@@ -34,7 +34,8 @@
   position: absolute;
   top: 48px;
   left: 0;
-  width: 280px;
+  width: 260px;
+  height: auto;
   pointer-events: none;
   z-index: 2;
 }
